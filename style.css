@@ -1,0 +1,43 @@
+#content {
+    display: grid;
+    justify-content: center;
+    grid-auto-flow: column;
+    gap: 50px;
+}
+
+#content > div > div {
+    display: grid;
+}
+
+#content > div > div {
+    border: 1px solid black;
+    visibility: hidden;
+}
+
+#content > div > div > span {
+    border: 1px solid blue;
+}
+
+#slider {
+    display: grid;
+}
+
+#slider > div > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#slider > div {
+    justify-self: center;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
+
+#slider > div > img {
+    visibility: hidden;
+}
+
+#slider > div:first-child > img {
+    visibility: visible;
+}
