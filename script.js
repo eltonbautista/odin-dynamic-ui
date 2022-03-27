@@ -42,8 +42,9 @@ const imageSliderFunction = function imageSliderFunction() {
             img.style.visibility = 'hidden';
             sliderSushiImages[i].style.visibility = 'visible';
         });
+        const fooTimeout = setTimeout(nextImageFunction, 10000);
     };
-    const fooTimeout = setTimeout(nextImageFunction, 5000);
+
     const previousImageFunction = function previousImageFunction() {
         i -= 1;
         if (i < 0) {
@@ -57,9 +58,19 @@ const imageSliderFunction = function imageSliderFunction() {
         // clearTimeout(setTimeout(nextImageFunction, 5000));
     };
 
+    // const timeoutControl = function timeoutControl() {
+    //     return setTimeout(nextImageFunction, 5000);
+    // };
+
     const sliderController = (function sliderController() {
-        sliderButtons[0].addEventListener('click', previousImageFunction);
-        sliderButtons[1].addEventListener('click', nextImageFunction);
+        sliderButtons[0].addEventListener('click', () => {
+            previousImageFunction();
+            // clearTimeout(timeoutControl);
+        });
+        sliderButtons[1].addEventListener('click', () => {
+            nextImageFunction();
+            // timeoutControl();
+        });
     })();
 };
 
